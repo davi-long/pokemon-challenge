@@ -1,0 +1,102 @@
+public class Pokemon {
+    private String pokemonName;
+    private int powerLevel;
+
+    private String battleType1;
+    private String battleType2;
+
+    public String getPokemonName() {
+        return pokemonName;
+    }
+    public Pokemon(String pokemonName, int powerLevel, String battleType1, String battleType2){
+        this.pokemonName = pokemonName;
+        this.powerLevel = powerLevel;
+        this.battleType1 = battleType1;
+        this.battleType2 = battleType2;
+    }
+    public Pokemon(String pokemonName, int powerLevel, String battleType1){
+        this.pokemonName = pokemonName;
+        this.powerLevel = powerLevel;
+        this.battleType1 = battleType1;
+    }
+    public int getPowerLevel() {
+        return powerLevel;
+    }
+
+    public String getBattleType1() {
+        return battleType1;
+    }
+
+    public String getBattleType2() {
+        return battleType2;
+    }
+
+    String[] pokemonList = {
+        "Abomasnow",
+        "Aerodactyl",
+        "Beedrill",
+        "Bibarel",
+        "Blaziken",
+        "Breloom",
+        "Dedenne",
+        "Emolga",
+        "Exeggutor",
+        "Froslass",
+        "Garchomp",
+        "Gengar",
+        "Grimmsnarl",
+        "Heliolisk",
+        "Hydreigon",
+        "Lucario",
+        "Metagross",
+        "Quagsire",
+        "Salazzle",
+        "Sandygast",
+        "Scizor",
+        "Slowking",
+        "Talonflame",
+        "Tyrantrum",
+        "Weavile",
+        "Wigglytuff"};
+
+   // Pokemon Type Arrays
+
+    private String[] normalType = {"Bibarel", "Heliolisk", "Wigglytuff"};
+
+    private String[] fireType = {"Blaziken", "Salazzle", "Talonflame"};
+
+    private String[] waterType = {"Bibarel", "Quagsire", "Slowking"};
+
+    private String[] electricType = {"Dedenne", "Emolga", "Heliolisk"};
+
+    private String[] grassType = {"Abomasnow", "Breloom", "Exeggutor"};
+
+    private String[] iceType = {"Abomasnow", "Froslass", "Weavile"};
+
+    private String[] fightingType = {"Blaziken", "Breloom", "Lucario"};
+
+    private String[] poisonType = {"Beedrill", "Gengar", "Salazzle"};
+
+    private String[] groundType = {"Garchomp", "Quagsire", "Sandygast"};
+
+    private String[] flyingType = {"Aerodactyl", "Emolga", "Talonflame"};
+
+    private String[] psychicType = {"Exeggutor", "Metagross", "Slowking"};
+
+    private String[] bugType = {"Beedrill", "Crustle", "Scizor"};
+
+    private String[] rockType = {"Aerodactyl", "Crustle", "Tyrantrum"};
+
+    private String[] ghostType = {"Froslass", "Gengar", "Sandygast"};
+
+    private String[] dragonType = {"Garchomp", "Hydreigon", "Tyrantrum"};
+
+    private String[] darkType = {"Grimmsnarl", "Hydreigon", "Weavile"};
+
+    private String[] steelType = {"Lucario", "Metagross", "Scizor"};
+
+    private String[] fairyType = {"Dedenne", "Grimmsnarl", "Wigglytuff"};
+
+    private String[][] allTypes = {normalType, fireType, waterType, electricType, grassType, iceType, fightingType, poisonType,
+            groundType, flyingType, psychicType, bugType, rockType, ghostType, dragonType, darkType, steelType, fairyType};
+}
