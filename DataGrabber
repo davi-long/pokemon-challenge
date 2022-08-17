@@ -1,0 +1,72 @@
+public class DataGrabber {
+    public static String[] pokemonList = {
+            "Abomasnow",
+            "Aerodactyl",
+            "Beedrill",
+            "Bibarel",
+            "Blaziken",
+            "Breloom",
+            "Dedenne",
+            "Emolga",
+            "Exeggutor",
+            "Froslass",
+            "Garchomp",
+            "Gengar",
+            "Grimmsnarl",
+            "Heliolisk",
+            "Hydreigon",
+            "Lucario",
+            "Metagross",
+            "Palossand",
+            "Quagsire",
+            "Salazzle",
+            "Scizor",
+            "Slowking",
+            "Talonflame",
+            "Tyrantrum",
+            "Weavile",
+            "Wigglytuff"};
+
+   public static String[] displayTypeName = {"Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"};
+
+    private static String[] normalType = {"Bibarel", "Heliolisk", "Wigglytuff"};
+
+    private static String[] fireType = {"Blaziken", "Salazzle", "Talonflame"};
+
+    private static String[] waterType = {"Bibarel", "Quagsire", "Slowking"};
+
+    private static String[] electricType = {"Dedenne", "Emolga", "Heliolisk"};
+
+    private static String[] grassType = {"Abomasnow", "Breloom", "Exeggutor"};
+
+    private static String[] iceType = {"Abomasnow", "Froslass", "Weavile"};
+
+    private static String[] fightingType = {"Blaziken", "Breloom", "Lucario"};
+
+    private static String[] poisonType = {"Beedrill", "Gengar", "Salazzle"};
+
+    private static String[] groundType = {"Garchomp", "Quagsire", "Sandygast"};
+
+    private static String[] flyingType = {"Aerodactyl", "Emolga", "Talonflame"};
+
+    private static String[] psychicType = {"Exeggutor", "Metagross", "Slowking"};
+
+    private static String[] bugType = {"Beedrill", "Crustle", "Scizor"};
+
+    private static String[] rockType = {"Aerodactyl", "Crustle", "Tyrantrum"};
+
+    private static String[] ghostType = {"Froslass", "Gengar", "Sandygast"};
+
+    private static String[] dragonType = {"Garchomp", "Hydreigon", "Tyrantrum"};
+
+    private static String[] darkType = {"Grimmsnarl", "Hydreigon", "Weavile"};
+
+    private static String[] steelType = {"Lucario", "Metagross", "Scizor"};
+
+    private static String[] fairyType = {"Dedenne", "Grimmsnarl", "Wigglytuff"};
+
+    public static String[][] allTypes = {normalType, fireType, waterType, electricType, grassType, iceType, fightingType, poisonType,
+            groundType, flyingType, psychicType, bugType, rockType, ghostType, dragonType, darkType, steelType, fairyType};
+
+
+}
