@@ -1,0 +1,167 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        DamageHandler dmg = new DamageHandler();
+
+        Pokemon emolga = new Pokemon("Emolga", 7, "Electric", "Flying");
+        System.out.println(dmg.getDamage(emolga.getBattleType1(),"Ground"));
+
+        Pokemon slowking = new Pokemon("Slowking", 7, "Water", "Psychic");
+        System.out.println(dmg.getDamage(slowking.getBattleType1(),"Ground"));
+
+        String[] pokemonList = DataGrabber.pokemonList;
+
+        ArrayList<String> pokemonArrayList = new ArrayList<>(Arrays.asList(pokemonList));
+
+        String[] displayTypeName = DataGrabber.displayTypeName;
+
+        String[][] allTypes = DataGrabber.allTypes;
+
+        // ArrayList<Integer> raNu = new ArrayList<>();
+
+        // Enemy Team Generation
+
+        Random r=new Random();
+        String response = "n";
+        int raNu1=r.nextInt(pokemonList.length-1);
+        int raNu2=r.nextInt(pokemonList.length-1);
+        int raNu3=r.nextInt(pokemonList.length-1);
+        int raNu4=r.nextInt(pokemonList.length-1);
+        int raNu5=r.nextInt(pokemonList.length-1);
+        int raNu6=r.nextInt(pokemonList.length-1);
+
+        while(raNu1==raNu2 || raNu1==raNu3 || raNu1 == raNu4 || raNu1 == raNu5 || raNu1 == raNu6 || raNu2 == raNu3 || raNu2 == raNu4 || raNu2 == raNu5 ||
+                raNu2 == raNu6 || raNu3 == raNu4 || raNu3 == raNu5 || raNu3 == raNu6 || raNu4 == raNu5 || raNu4 == raNu6 || raNu5 == raNu6){
+            raNu1=r.nextInt(pokemonList.length-1);
+            raNu2=r.nextInt(pokemonList.length-1);
+            raNu3=r.nextInt(pokemonList.length-1);
+            raNu4=r.nextInt(pokemonList.length-1);
+            raNu5=r.nextInt(pokemonList.length-1);
+            raNu6=r.nextInt(pokemonList.length-1);
+        }
+        System.out.println(pokemonList[raNu1]);
+        System.out.println(pokemonList[raNu2]);
+        System.out.println(pokemonList[raNu3]);
+        System.out.println(pokemonList[raNu4]);
+        System.out.println(pokemonList[raNu5]);
+        System.out.println(pokemonList[raNu6]);
+        System.out.println("The above Pokemon are on the enemy trainer's team. Build your own team of four to beat them!");
+        System.out.println("");
+
+        // User Team Generation
+
+        int raNu7=r.nextInt(pokemonList.length-1);
+        int raNu8=r.nextInt(pokemonList.length-1);
+        int raNu9=r.nextInt(allTypes.length-1);
+        int raNu10=r.nextInt(allTypes[0].length -1);
+
+
+        String adopt;
+
+        String[] party = new String[6];
+
+        for (int i = 0; i < 6; i++) {
+
+
+            System.out.println("Please choose 1, 2, or 3.");
+            System.out.println(pokemonList[raNu7]);
+            System.out.println(pokemonList[raNu8]);
+            System.out.println(Arrays.toString(allTypes[raNu9]));
+
+            //int choice = sc.nextInt();
+
+            String favorite = sc.nextLine();
+            int choice = 0;
+            if (favorite.equals("1") || favorite.equals("2") || favorite.equals("3")) {
+                choice = Integer.parseInt(favorite);
+
+            }
+
+            if (choice == 1 || choice == 2 || choice == 3) {
+
+                if (choice == 1) {
+                    System.out.println(pokemonList[raNu7]);
+                    adopt = pokemonList[raNu7];
+                    party[i] = adopt;
+                    System.out.println("");
+                } else if (choice == 2) {
+                    System.out.println(pokemonList[raNu8]);
+                    adopt = pokemonList[raNu8];
+                    party[i] = adopt;
+                    System.out.println("");
+
+                } else if (choice == 3) {
+                    System.out.println(allTypes[raNu9][raNu10]);
+                    adopt = allTypes[raNu9][raNu10];
+                    party[i] = adopt;
+                    System.out.println("");
+                }
+
+                raNu7=r.nextInt(pokemonList.length-1);
+                raNu8=r.nextInt(pokemonList.length-1);
+                raNu9=r.nextInt(allTypes.length-1);
+                raNu10=r.nextInt(allTypes[0].length );
+
+
+            } else {
+                i--;
+                System.out.println("Make sure you only type 1, 2, or 3!");
+                System.out.println("");
+            }
+        }
+
+
+
+        System.out.println("Please choose two of these to remove from your party.");
+        for (int i = 0; i <6; i++) {
+            System.out.println((i + 1) + ": " +party[i]);
+        }
+
+        String[] champs = reduceParty(party);
+        for (String i : champs){
+            System.out.println(i);
+        }
+    }
+    public static String[] reduceParty(String[] party){
+        Scanner sc2 = new Scanner(System.in);
+        String abandon;
+        String[] deposit;
+        ArrayList<String> champs = new ArrayList<>(Arrays.asList(party));
+        int da;
+        int db;
+
+        for (int z = 0; z < 1; z++) {
+            abandon = sc2.nextLine();
+            deposit = abandon.split(" ");
+            da = Integer.parseInt(deposit[0]) -1;
+            db = Integer.parseInt(deposit[1]) -1;
+
+        if (da == db){
+            System.out.println("Please deposit two Pokemon.");
+            z--;
+        }
+
+        else if (da > db){
+            champs.remove(da);
+            champs.remove(db);
+        }
+        else if (da < db){
+            champs.remove(db);
+            champs.remove(da);
+        }
+        }
+
+        return champs.toArray(new String[0]);
+
+
+    };
+    public static Object pokemonDetails;{
+
+    }
+};
